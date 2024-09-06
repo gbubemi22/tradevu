@@ -32,17 +32,114 @@ $ npm run start
 1. **Mongodb** .
 2. **ORM Mongoose** : Initialize Prisma ORM.
 
-### Using Docker
+#### Docker Image
 
-1. Pull the database image and start the container:
-2. docker-compose up -d
+
+docker pull slimbewo/tradevuapp:latest
 
 #### End Points
 
-.http://localhost:8000/v1/auth/signup  
+.https://tradevuapp-latest.onrender.com/v1/auth/signup
 
-. http://localhost:8000/v1/auth/login
+post request
 
-.http://localhost:8000/v1/orders
 
-.http://localhost:8000/v1/orders/upload-document
+{
+
+"firstName":"John",
+
+"lastName":"Zoom",
+
+"email":"test@test.com",
+
+"password":"Webnet22@",
+
+"phoneNumber":"07030762738",
+
+"role":"SUPPLIER" OR "BUYER"
+
+}
+
+. https://tradevuapp-latest.onrender.com/v1/auth/login
+
+
+post request 
+
+
+{
+
+"email":"test@test.com",
+
+"password":"Webnet22@"
+
+}
+
+
+this end point can be accessed with login user
+
+.https://tradevuapp-latest.onrender.com/v1/orders
+
+
+
+{
+
+"supplierId":"66db4605fe72426ca3c90d56",
+
+"dueDate":"2024-09-07",
+
+"paymentMethod":"AUTOMATIC_DEBIT",
+
+"paymentTerms":"FULL_PAYMENT",
+
+"items":[
+
+{
+
+"name":"Item 1",
+
+"quantity":10,
+
+"price":15.99
+
+},
+
+{
+
+"name":"Item 2",
+
+"quantity":5,
+
+"price":20.00
+
+},
+
+{
+
+"name":"Item 3",
+
+"quantity":2,
+
+"price":30.00
+
+},
+
+{
+
+"name":"Item 4",
+
+"quantity":1,
+
+"price":50.00
+
+}
+
+]
+
+}
+
+
+
+.https://tradevuapp-latest.onrender.com/v1/orders/upload-document
+
+
+patch request to upload document
